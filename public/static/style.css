@@ -14,8 +14,8 @@ body {
   color: #111;
 }
 a {
-  color: #0055d4;
-  text-decoration-color: #abcbfb;
+  color: #1e5d39;
+  text-decoration-color: #5a7a6b;
 }
 a:hover {
   color: #111;
@@ -44,7 +44,7 @@ input[type="text"], input[type="email"], input[type="password"], select {
   font-size: 1em;
 }
   input:focus {
-    border-color: #0055d4;
+    border-color: #1e5d39;
   }
 
 input:focus::placeholder {
@@ -65,10 +65,10 @@ input[disabled] {
   font-size: 0.875em;
 }
 .error {
-  color: #FF5722;
+  color: #ff6b35;
 }
 .button {
-  background: #0055d4;
+  background: #1e5d39;
   padding: 15px 30px;
   border-radius: 3px;
   border: 0;
@@ -86,8 +86,8 @@ input[disabled] {
 }
 .button.button-outline {
   background: #fff;
-  border: 1px solid #0055d4;
-  color: #0055d4;
+  border: 1px solid #1e5d39;
+  color: #1e5d39;
 }
 .button.button-outline:hover {
   border-color: #333;

@@ -38,7 +38,7 @@
               </div>
               <div style="padding:16px 24px 16px 24px">
                 <a href="https://listmonk.app"
-                  style="color:#FFFFFF;font-size:16px;font-weight:bold;background-color:#0055d4;border-radius:4px;display:inline-block;padding:12px 20px;text-decoration:none"
+                  style="color:#FFFFFF;font-size:16px;font-weight:bold;background-color:#1e5d39;border-radius:4px;display:inline-block;padding:12px 20px;text-decoration:none"
                   target="_blank">
                   <span><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:30" hidden>&nbsp;</i><![endif]--></span>
                   <span>This is a button</span>
