@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"flag"
 	"fmt"
 	"html/template"
 	"log"
@@ -156,14 +157,40 @@ func patchOptinCampaignEmailPreview(html string) string {
 	return optinCampaignSubFirstNameRE.ReplaceAllString(html, previewMockSubscriberFirstName)
 }
 
+// isSafeLocaleCode restricts -lang to a basename under i18n/ (no path separators).
+func isSafeLocaleCode(s string) bool {
+	if len(s) < 2 || len(s) > 24 {
+		return false
+	}
+	for _, r := range s {
+		switch {
+		case r >= 'a' && r <= 'z', r >= 'A' && r <= 'Z', r >= '0' && r <= '9', r == '-':
+			continue
+		default:
+			return false
+		}
+	}
+	return true
+}
+
 func main() {
 	root := mustRoot()
 
-	langPath := filepath.Join(root, "i18n", "en.json")
+	langFlag := flag.String("lang", "en", "i18n locale: basename of a JSON file under i18n/ (e.g. de, fr, zh-CN, cs-cz)")
+	flag.Parse()
+	code := strings.TrimSpace(*langFlag)
+	if code == "" {
+		code = "en"
+	}
+	if !isSafeLocaleCode(code) {
+		log.Fatalf("invalid -lang %q: use only letters, digits, and hyphen (see i18n/*.json)", code)
+	}
+	langPath := filepath.Join(root, "i18n", code+".json")
 	lang, err := LoadI18n(langPath)
 	if err != nil {
 		log.Fatalf("load i18n: %v", err)
 	}
+	log.Printf("i18n locale: %s", code)
 
 	staticDir := filepath.Join(root, "public/static")
 	fs := http.FileServer(http.Dir(staticDir))

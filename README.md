@@ -28,6 +28,11 @@ To render the same templates without a full listmonk install, use the preview se
 
 ```bash
 go run ./renderer
+go run ./renderer -lang=de
 ```
 
-The repo includes [`go.work`](go.work) so `go run ./renderer` works from the repository root. Then open the URL printed in the log (by default `http://localhost:8088/`) for an index of public and e-mail previews.
+The repo includes [`go.work`](go.work) so `go run ./renderer` works from the repository root. Then open the URL printed in the log (by default `http://localhost:8088/`) for an index of public and e-mail previews. Use `-lang` with the basename of any file in [`i18n/`](i18n/) (e.g. `de`, `zh-CN`; default `en`).
+
+## Language in listmonk
+
+In the admin UI, set **Settings → General → Language** to the locale you want. listmonk loads the matching JSON from the static directory’s `i18n/` folder (this repo’s [`i18n/`](i18n/) when using `--static-dir` here). Add or edit `*.json` files there to customize translations.
