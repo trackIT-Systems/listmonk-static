@@ -101,7 +101,7 @@
       },
       "props": {
         "markdown": true,
-        "text": "<a href=\"{{ UnsubscribeURL }}\" style=\"color: #888;\">{{ L.T \"email.unsub\" }}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"{{ MessageURL }}\" style=\"color: #888;\">{{ L.T \"email.viewInBrowser\" }}</a>"
+        "text": "<a href=\"{{ UnsubscribeURL }}\" style=\"color: #888;\">{{ L.T \"email.unsub\" }}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"{{ MessageURL }}\" style=\"color: #888;\">{{ L.T \"email.viewInBrowser\" }}</a><span style=\"display:block;margin-top:28px;color:#666;line-height:1.5;\"><strong>trackIT Systems GmbH</strong><br>Unterm Bornrain 4, 35091 Cölbe, Germany</span><span style=\"display:block;margin-top:14px;color:#888;\">{{ L.T \"public.poweredBy\" }} <a href=\"https://listmonk.app\" style=\"color: #888;\" target=\"_blank\" rel=\"noreferrer\">listmonk</a> &nbsp;·&nbsp; <a href=\"https://trackit.systems/en/contact/\" style=\"color: #888;\" target=\"_blank\" rel=\"noreferrer\">Imprint</a> &nbsp;·&nbsp; <a href=\"https://trackit.systems/datenschutzerklaerung/\" style=\"color: #888;\" target=\"_blank\" rel=\"noreferrer\">Privacy Policy</a></span>"
       }
     }
   },
@@ -122,7 +122,7 @@
       },
       "props": {
         "markdown": true,
-        "text": "<a href=\"{{ UnsubscribeURL }}\" style=\"color: #888;\">{{ L.T \"email.unsub\" }}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"{{ MessageURL }}\" style=\"color: #888;\">{{ L.T \"email.viewInBrowser\" }}</a>\n{{ TrackView }}"
+        "text": "<a href=\"{{ UnsubscribeURL }}\" style=\"color: #888;\">{{ L.T \"email.unsub\" }}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"{{ MessageURL }}\" style=\"color: #888;\">{{ L.T \"email.viewInBrowser\" }}</a><span style=\"display:block;margin-top:28px;color:#666;line-height:1.5;\"><strong>trackIT Systems GmbH</strong><br>Unterm Bornrain 4, 35091 Cölbe, Germany</span><span style=\"display:block;margin-top:14px;color:#888;\">{{ L.T \"public.poweredBy\" }} <a href=\"https://listmonk.app\" style=\"color: #888;\" target=\"_blank\" rel=\"noreferrer\">listmonk</a> &nbsp;·&nbsp; <a href=\"https://trackit.systems/en/contact/\" style=\"color: #888;\" target=\"_blank\" rel=\"noreferrer\">Imprint</a> &nbsp;·&nbsp; <a href=\"https://trackit.systems/datenschutzerklaerung/\" style=\"color: #888;\" target=\"_blank\" rel=\"noreferrer\">Privacy Policy</a></span>\n{{ TrackView }}"
       }
     }
   }

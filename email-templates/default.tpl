@@ -97,6 +97,17 @@
             &nbsp;&nbsp;
             <a href="{{ MessageURL }}" style="color: #888;">{{ L.T "email.viewInBrowser" }}</a>
         </p>
+        <p style="margin: 28px 0 0 0; color: #666; line-height: 1.5;">
+            <strong>trackIT Systems GmbH</strong><br>
+            Unterm Bornrain 4, 35091 Cölbe, Germany
+        </p>
+        <p style="margin: 14px 0 0 0;">
+            {{ L.T "public.poweredBy" }} <a href="https://listmonk.app" target="_blank" rel="noreferrer" style="color: #888;">listmonk</a>
+            &nbsp;·&nbsp;
+            <a href="https://trackit.systems/en/contact/" style="color: #888;" target="_blank" rel="noreferrer">Imprint</a>
+            &nbsp;·&nbsp;
+            <a href="https://trackit.systems/datenschutzerklaerung/" style="color: #888;" target="_blank" rel="noreferrer">Privacy Policy</a>
+        </p>
     </div>
     <div class="gutter" style="padding: 30px;">&nbsp;{{ TrackView }}</div>
 </body>
