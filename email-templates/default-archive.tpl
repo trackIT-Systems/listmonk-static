@@ -16,7 +16,7 @@
             }
 
             pre {
-                background: #f4f4f4f4;
+                background: #f4f4f4;
                 padding: 2px;
             }
 
