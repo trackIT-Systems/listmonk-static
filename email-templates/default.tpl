@@ -99,7 +99,7 @@
         </p>
         <p style="margin: 28px 0 0 0; color: #666; line-height: 1.5;">
             <strong>trackIT Systems GmbH</strong><br>
-            Unterm Bornrain 4, 35091 Cölbe, Germany
+            Zelterstraße 1, 35043 Marburg-Schröck, Germany
         </p>
         <p style="margin: 14px 0 0 0;">
             {{ L.T "public.poweredBy" }} <a href="https://listmonk.app" target="_blank" rel="noreferrer" style="color: #888;">listmonk</a>
