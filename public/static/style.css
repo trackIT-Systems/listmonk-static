@@ -1,3 +1,6 @@
+/* Colors, radii and fonts come from brand/tokens.css (trackIT-Systems/brand).
+   Rules: brand/DESIGN.md. No raw color values here. */
+
 * {
   box-sizing: border-box;
 }
@@ -7,28 +10,38 @@ html, body {
   min-width: 320px;
 }
 body {
-  background: #f9f9f9;
-  font-family: "Inter", "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--color-page-background);
+  font-family: var(--font-text);
   font-size: 16px;
   line-height: 26px;
-  color: #111;
+  color: var(--color-text);
 }
 a {
-  color: #1e5d39;
-  text-decoration-color: #5a7a6b;
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 a:hover {
-  color: #111;
+  text-decoration-thickness: 2px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
 }
 label {
   cursor: pointer;
-  color: #444;
 }
 h1,
 h2,
 h3,
 h4 {
   font-weight: 400;
+  color: var(--color-heading);
 }
 .section {
   margin-bottom: 45px;
@@ -36,16 +49,18 @@ h4 {
 
 input[type="text"], input[type="email"], input[type="password"], select {
   padding: 10px 15px;
-  border: 1px solid #888;
-  border-radius: 3px;
+  min-height: 44px;
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-control);
   width: 100%;
-  box-shadow: 2px 2px 0 #f3f3f3;
-  border: 1px solid #ddd;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
   font-size: 1em;
 }
-  input:focus {
-    border-color: #1e5d39;
-  }
+input[type="checkbox"], input[type="radio"] {
+  accent-color: var(--color-accent);
+}
 
 input:focus::placeholder {
   color: transparent;
@@ -64,51 +79,74 @@ input[disabled] {
 .small {
   font-size: 0.875em;
 }
+/* TODO(Nicole): the brand has no error color yet. Signal orange is reserved
+   for the primary action and fails contrast as text, so errors are bold text. */
 .error {
-  color: #ff6b35;
+  color: var(--color-text);
+  font-weight: 600;
 }
+
+/* Buttons: brand/DESIGN.md › Buttons. .button is the primary action (one per
+   view), .button-outline the secondary one. */
 .button {
-  background: #1e5d39;
-  padding: 15px 30px;
-  border-radius: 3px;
-  border: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: #ffff;
   display: inline-block;
-  min-width: 150px;
-  font-size: 1.1em;
+  min-height: 44px;
+  padding: 9px 20px;
+  border: 2px solid var(--color-cta);
+  border-radius: var(--radius-control);
+  background: var(--color-cta);
+  color: var(--color-on-cta);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 .button:hover {
-  background: #333;
-  color: #fff;
+  background: color-mix(in srgb, var(--color-cta) 85%, var(--color-palette-white));
+  border-color: color-mix(in srgb, var(--color-cta) 85%, var(--color-palette-white));
+  color: var(--color-on-cta);
+}
+.button:active {
+  background: color-mix(in srgb, var(--color-cta) 70%, var(--color-palette-white));
+  border-color: color-mix(in srgb, var(--color-cta) 70%, var(--color-palette-white));
 }
 .button.button-outline {
-  background: #fff;
-  border: 1px solid #1e5d39;
-  color: #1e5d39;
+  background: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 .button.button-outline:hover {
-  border-color: #333;
-  background-color: #333;
-  color: #fff;
+  background: var(--color-surface-subtle);
+}
+.button.button-outline:active {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+.button:disabled,
+.button:disabled:hover {
+  background: var(--color-surface-subtle);
+  border-color: var(--color-surface-subtle);
+  color: var(--color-palette-slate-green);
+  cursor: not-allowed;
 }
 
 .container {
   margin: 60px auto 15px auto;
-  max-width: 550px;  
+  max-width: 550px;
 }
 
 .wrap {
-  background: #fff;
+  background: var(--color-surface);
   padding: 40px;
-  box-shadow: 2px 2px 0 #f3f3f3;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
 }
 
 .header {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: 15px;
   margin-bottom: 30px;
 }
@@ -120,7 +158,7 @@ input[disabled] {
 .unsub-all {
   margin-top: 30px;
   padding-top: 30px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--color-border);
 }
 
 .row {
@@ -131,13 +169,12 @@ input[disabled] {
   padding: 0;
 }
   .lists li {
-    margin: 0 0 5px 0;    
+    margin: 0 0 5px 0;
   }
   .lists .description {
     margin: 0 0 15px 0;
     font-size: 0.875em;
     line-height: 1.3rem;
-    color: #888;
     margin-left: 25px;
   }
   .form .nonce {
@@ -154,7 +191,6 @@ input[disabled] {
 }
   .archive .date {
     display: block;
-    color: #666;
     font-size: 0.875em;
   }
   .archive li {
@@ -205,6 +241,7 @@ input[disabled] {
     text-align: center;
   }
 
+/* Secondary text is dark-gray in a smaller size (brand/DESIGN.md › Color). */
 footer.container.site-footer {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -212,24 +249,15 @@ footer.container.site-footer {
   font-size: 0.875em;
 }
 footer.container.site-footer .footer-legal {
-  color: #666;
   line-height: 1.5;
   margin: 28px 0 14px 0;
 }
-footer.container.site-footer .footer-legal strong {
-  color: #444;
-}
 footer.container.site-footer .footer-attribution {
   margin: 0;
-  color: #aaa;
   font-size: 0.886em;
 }
 footer.container.site-footer .footer-attribution a {
-  color: #aaa;
-  text-decoration: none;
-}
-footer.container.site-footer .footer-attribution a:hover {
-  color: #111;
+  color: var(--color-text);
 }
 
 @media screen and (max-width: 650px) {
@@ -237,5 +265,7 @@ footer.container.site-footer .footer-attribution a:hover {
     margin: 0;
     padding: 30px;
     max-width: none;
+    border-radius: 0;
+    border-width: 1px 0;
   }
 }

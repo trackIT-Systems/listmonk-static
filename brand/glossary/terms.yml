@@ -1,0 +1,259 @@
+# Canonical terms of trackIT Systems.
+# One entry per concept. Both languages. Used by people, agents, and (later) generated Vale rules.
+#
+# Fields:
+#   id:          stable key, kebab-case
+#   de / en:     the canonical term per language (same value if not translated)
+#   avoid:       spellings or synonyms we do not use; Vale suggests the canonical term instead
+#   definition:  one sentence, what the term means for us
+#   notes:       optional usage notes
+
+terms:
+  - id: company
+    de: trackIT Systems
+    en: trackIT Systems
+    avoid: [TrackIT Systems, Trackit Systems, trackit systems, TrackIt]
+    definition: The company.
+    notes: >-
+      Legal name "trackIT Systems GmbH", used in the imprint, contracts, invoices, address blocks and copyright lines.
+      In running text "trackIT Systems" is enough.
+
+  # Naming scheme for products:
+  #   <domain>:tracker            a device (hardware in the field)
+  #   <domain>:tracker-<variant>  a device variant, joined with a dash
+  #   <domain>:pipeline           the whole system for that domain (devices, tsOS, online tools, analysis)
+  #   tsOS, tsOS-<domain>         the operating system on the trackers
+  #   own names                   online tools (EcoHub, Sonari)
+  # Product names are always lowercase, also at the start of a sentence and in headlines.
+
+  - id: trackit-system
+    de: das trackIT System
+    en: the trackIT system
+    avoid: [trackIT-System, tRackIT System, TrackIT System]
+    definition: Everything we provide, taken together; all pipelines, trackers and tools.
+    notes: >-
+      German capitalizes "System", English writes "system". Use it for the overall view. For one domain, name the pipeline (audio:pipeline, vhf:pipeline),
+      and for one device, the tracker.
+
+  - id: tracker
+    de: tracker
+    en: tracker
+    avoid: [Tracker]
+    definition: Generic word for one of our devices in the field; "tracker" always means a device made by us.
+    notes: >-
+      For any field unit, including devices of other manufacturers we support, use "Station".
+
+  - id: station
+    de: Station
+    en: station
+    avoid: [Box, Boxen, Sensoreinheit, Empfangseinheit]
+    definition: General term for a unit in the field, ours (a tracker) or a supported device of another manufacturer.
+    notes: >-
+      "Empfangsstation" for VHF receivers is fine where the function matters.
+
+  - id: audio-tracker
+    de: audio:tracker
+    en: audio:tracker
+    avoid: [audio_tracker, Audio-Tracker, audiotracker, Audiotracker, "audio tracker"]
+    definition: Our device for acoustic recording and on-device species recognition of birds and bats.
+    notes: >-
+      German plural "die audio:tracker", dative "den audio:trackern"; English plural "audio:trackers".
+
+  - id: audio-tracker-spotlite
+    de: audio:tracker-spotlite
+    en: audio:tracker-spotlite
+    avoid: ["audio:tracker spotlite", "audio:tracker Spotlite", "Variante Spotlite"]
+    definition: audio:tracker variant for short surveys of about two nights, for example alongside mist netting.
+
+  - id: audio-tracker-explorer
+    de: audio:tracker-explorer
+    en: audio:tracker-explorer
+    avoid: ["audio:tracker explorer", "Variante Explorer"]
+    definition: audio:tracker variant for surveys of several weeks, on battery or solar power.
+
+  - id: audio-tracker-monitor
+    de: audio:tracker-monitor
+    en: audio:tracker-monitor
+    avoid: ["audio:tracker monitor", "Variante Monitor", "in der Variante Monitor"]
+    definition: audio:tracker variant for permanent, solar-powered long-term monitoring over several years.
+
+  - id: audio-tracker-barrier
+    de: audio:tracker-barrier
+    en: audio:tracker-barrier
+    avoid: ["audio:tracker barrier"]
+    definition: audio:tracker variant with a light barrier, for monitoring bat roosts; it records bats flying in and out (emergence and return).
+    notes: >-
+      German: "Ein- und Ausflug" am Quartier.
+
+  - id: vhf-tracker
+    de: vhf:tracker
+    en: vhf:tracker
+    avoid: [vhf-tracker, vhf-Tracker, VHF-Tracker, vhf_tracker, "vhf tracker"]
+    definition: Our device for automatic radio telemetry; it receives the signals of VHF tags.
+    notes: >-
+      "VHF" in capitals when it means the frequency band or the tags ("VHF-Sender"); lowercase only in product names.
+
+  - id: vhf-tracker-omni
+    de: vhf:tracker-omni
+    en: vhf:tracker-omni
+    avoid: ["vhf-tracker:Omni", "vhf:tracker omni", "vhf:tracker-Omni"]
+    definition: vhf:tracker variant that receives from all directions; it estimates distance to a tag but gives no direction, used for presence/absence telemetry and activity.
+
+  - id: vhf-tracker-directional
+    de: vhf:tracker-directional
+    en: vhf:tracker-directional
+    avoid: ["vhf-tracker:Directional", "vhf:tracker-Directional", "vhf:tracker directional", Quattrologger, Quattrologger-Antenne]
+    definition: vhf:tracker variant with four Yagi antennas, one per cardinal direction; it estimates distance and direction, and several of them together give a position.
+    notes: >-
+      Quattrologger is the old name, still used on the project pages.
+
+  - id: audio-pipeline
+    de: audio:pipeline
+    en: audio:pipeline
+    avoid: [Akustik-Pipeline, "audio pipeline"]
+    definition: Our complete system for acoustic monitoring, from the audio:trackers to the results in EcoHub and Sonari.
+
+  - id: vhf-pipeline
+    de: vhf:pipeline
+    en: vhf:pipeline
+    avoid: ["Radio-Telemetrie System", "Radio-Tracking System"]
+    definition: Our complete system for automatic radio telemetry, from the vhf:trackers to positions and analyses.
+    notes: >-
+      Many website texts say "das trackIT System" where they mean only radio telemetry; there, use vhf:pipeline.
+
+  - id: tsos
+    de: tsOS
+    en: tsOS
+    avoid: [TSOS, tsos, TsOS, "ts OS"]
+    definition: The operating system that runs on our trackers.
+
+  - id: tsos-audio
+    de: tsOS-audio
+    en: tsOS-audio
+    avoid: ["tsOS audio", "tsOS-Audio"]
+    definition: tsOS for the audio:tracker.
+
+  - id: tsos-vhf
+    de: tsOS-vhf
+    en: tsOS-vhf
+    avoid: ["tsOS vhf", "tsOS-VHF"]
+    definition: tsOS for the vhf:tracker.
+
+  - id: ecohub
+    de: EcoHub
+    en: EcoHub
+    avoid: [Ecohub, ECOHUB, Eco-Hub, "EcoHub-Datenbank"]
+    definition: Our central web platform for monitoring projects; it holds the sensor data and metadata (trackers, tags, individuals) and is where projects are organized and results evaluated.
+
+  - id: sonari
+    de: Sonari
+    en: Sonari
+    avoid: ["Sonari Audio Annotation Tool", Annotierungstool, "annotation tool"]
+    definition: Our online tool for annotating and reviewing audio recordings.
+
+  - id: ecohub-field
+    de: EcoHub Field
+    en: EcoHub Field
+    avoid: ["EcoHub Field App", "EcoHub-Field", "EcoHub field"]
+    definition: The mobile companion app for EcoHub, for field work and for configuring trackers on site.
+    notes: >-
+      Used to register trackers, log their GPS positions and check that they work during installation.
+      "die App EcoHub Field" is fine in running text.
+
+  - id: tsconfig
+    de: tsconfig
+    en: tsconfig
+    avoid: [TSConfig, tsConfig, "ts-config"]
+    definition: "The configuration interface for trackers: recording intervals, radio frequencies, power-saving modes."
+
+  - id: tsschedule
+    de: tsschedule
+    en: tsschedule
+    avoid: [tsSchedule, TSSchedule]
+    definition: The tsOS module that schedules recording on a tracker, for example relative to sunrise, to save battery.
+
+  - id: soundscapepipe
+    de: soundscapepipe
+    en: soundscapepipe
+    avoid: [SoundscapePipe, "soundscape pipe", Soundscapepipe]
+    definition: The software on the audio:trackers that processes audio live with machine learning models.
+    notes: >-
+      One component of the audio:pipeline; it runs on the trackers only.
+
+  - id: birdedge
+    de: BirdEdge
+    en: BirdEdge
+    avoid: [Bird@Edge, Birdedge, "Bird Edge"]
+    definition: Our method for recognizing bird calls in real time on the device, so that only results, not recordings, are transmitted.
+    notes: >-
+      Bird@Edge is the name of the original research project and paper (University of Marburg); use it only when citing that work.
+
+  - id: yolobat
+    de: YoloBat
+    en: YoloBat
+    avoid: [YOLOBat, Yolobat, "Yolo Bat"]
+    definition: Our deep learning model, based on the YOLO architecture, that detects and classifies bat calls in spectrograms.
+
+  - id: auth
+    de: Login
+    en: login
+    avoid: [trackIT Auth, Authentifizierungsdienst]
+    definition: Our single sign-on service; one login gives access to all web applications a customer has (EcoHub, Sonari, Grafana).
+    notes: >-
+      No product name; do not use auth.trackit.systems as a name. The address is given only where people need to type it.
+
+  - id: instance
+    de: Instanz
+    en: instance
+    avoid: [Kundenserver, "Cloud-Server Instanz", "Cloud-Server-Instanz"]
+    definition: A separate server environment for one customer, on which their EcoHub, Sonari and databases run.
+    notes: >-
+      The website says "kundenspezifische Cloud-Server Instanz"; "eigene Instanz" is enough.
+
+  - id: grafana
+    de: Grafana
+    en: Grafana
+    avoid: [grafana]
+    definition: Third-party tool we use to show live data and tracker status (battery, signal strength, detections) in dashboards.
+    notes: >-
+      Not our product; name it as a tool we use, not as part of EcoHub.
+
+  - id: wireguard
+    de: WireGuard
+    en: WireGuard
+    avoid: [Wireguard, wireguard]
+    definition: Open-source VPN we use for direct remote access to trackers.
+    notes: >-
+      Third-party; the official spelling is WireGuard.
+
+  - id: presence-absence-telemetry
+    de: Präsenz-Absenz-Telemetrie
+    en: presence/absence telemetry
+    avoid: [Präsenz/Absenzerfassung, Absenztelemetrie, "Omnipräsenz-/Absenztelemetrie", "presence-absence recording"]
+    definition: Telemetry method that records whether a tagged animal is within range of a receiver, without a position; used for activity patterns and roost use.
+
+  - id: space-use-telemetry
+    de: Raumnutzungstelemetrie
+    en: space-use telemetry
+    avoid: [Positions-Telemetrie]
+    definition: Telemetry method that uses several receivers to determine positions and how intensively an animal uses parts of its habitat.
+    notes: >-
+      TODO(brand owner): confirm the English term; the website uses "spatial use" and "positioning".
+
+  - id: tag
+    de: Sender
+    en: tag
+    avoid: [transmitter]
+    definition: The VHF radio transmitter fitted to an animal; it is not one of our trackers.
+    notes: >-
+      "besendern" / "to tag" for fitting one. "transmitter" is fine in technical specs. Do not call a tag a vhf:tracker; the wiki glossary does this and needs a fix.
+
+  # TODO(brand owner): names found on the site that are not covered yet:
+  #   - the wiki glossary (wiki.trackit.systems, "Glossar") defines vhf:tracker as "Telemetrie-Sender"; it is the receiver. Fix the wiki.
+  #   - partner: "Loten" on the radio telemetry page should be Lotek
+  #   - EN for "Eingriffsverfahren": the site uses "intervention procedures" (wrong); candidates "impact assessments", "planning approval procedures"
+  #   - person terms: neutral forms where common (Bearbeitende, Forschende, Fachleute, Gutachtende?), else *innen
+
+  # Retired names. Remove them from the website and do not use them in new texts:
+  #   - EcoHub Lab: a Jupyter Lab instance running EcoHub scripts, no longer offered (still mentioned on the radio telemetry page)
+  #   - Quattrologger: old name of the vhf:tracker-directional

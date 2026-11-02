@@ -5,13 +5,13 @@
   </head>
   <body>
     <div
-      style='background-color:#F5F5F5;color:#262626;font-family:"Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;font-size:16px;font-weight:400;letter-spacing:0.15008px;line-height:1.5;margin:0;padding:32px 0;min-height:100%;width:100%'
+      style='background-color:#f5f5f5;color:#222222;font-family:"Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;font-size:16px;font-weight:400;letter-spacing:0.15008px;line-height:1.5;margin:0;padding:32px 0;min-height:100%;width:100%'
     >
-      <table align="center" width="100%" style="margin:0 auto;max-width:600px;background-color:#FFFFFF" role="presentation" cellspacing="0" cellpadding="0" border="0">
+      <table align="center" width="100%" style="margin:0 auto;max-width:600px;background-color:#ffffff;border:1px solid #cbd6cd;border-radius:24px;overflow:hidden" role="presentation" cellspacing="0" cellpadding="0" border="0">
         <tbody>
           <tr style="width:100%">
             <td>
-              <h3 style="font-weight:bold;margin:0;font-size:20px;padding:16px 24px 16px 24px">
+              <h3 style="color:#1e5d39;font-weight:bold;margin:0;font-size:20px;padding:16px 24px 16px 24px">
                 Hello {{ .Subscriber.Name }}
               </h3>
               <div style="font-weight:normal;padding:16px 24px 16px 24px">
@@ -34,34 +34,34 @@
                 </p>
               </div>
               <div style="padding:16px 0px 16px 0px">
-                <hr style="width:100%;border:none;border-top:1px solid #CCCCCC;margin:0"/>
+                <hr style="width:100%;border:none;border-top:1px solid #cbd6cd;margin:0"/>
               </div>
               <div style="padding:16px 24px 16px 24px">
                 <a href="https://listmonk.app"
-                  style="color:#FFFFFF;font-size:16px;font-weight:bold;background-color:#1e5d39;border-radius:4px;display:inline-block;padding:12px 20px;text-decoration:none"
+                  style="color:#222222;font-size:16px;font-weight:bold;background-color:#ff6b35;border-radius:64px;display:inline-block;padding:12px 20px;text-decoration:none"
                   target="_blank">
                   <span><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:30" hidden>&nbsp;</i><![endif]--></span>
                   <span>This is a button</span>
                   <span><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]--></span>
                 </a>
               </div>
-              <div style="background-color:#F5F5F5;font-size:12px;font-weight:normal;text-align:center;padding:16px 24px 16px 24px">
+              <div style="background-color:#f5f5f5;font-size:12px;font-weight:normal;text-align:center;padding:16px 24px 16px 24px">
                 <p>
-                  <a href="{{ UnsubscribeURL }}" style="color: #888;">{{ L.T "email.unsub" }}</a>
+                  <a href="{{ UnsubscribeURL }}" style="color: #222222;">{{ L.T "email.unsub" }}</a>
                   &nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="{{ MessageURL }}" style="color: #888;">{{ L.T "email.viewInBrowser" }}</a>
+                  <a href="{{ MessageURL }}" style="color: #222222;">{{ L.T "email.viewInBrowser" }}</a>
                   {{ TrackView }}
                 </p>
-                <p style="margin:28px 0 0 0;color:#666;line-height:1.5;">
+                <p style="margin:28px 0 0 0;color:#222222;line-height:1.5;">
                   <strong>trackIT Systems GmbH</strong><br>
                   Zelterstraße 1, 35043 Marburg-Schröck, Germany
                 </p>
                 <p style="margin:14px 0 0 0;">
-                  {{ L.T "public.poweredBy" }} <a href="https://listmonk.app" target="_blank" rel="noreferrer" style="color: #888;">listmonk</a>
+                  {{ L.T "public.poweredBy" }} <a href="https://listmonk.app" target="_blank" rel="noreferrer" style="color: #222222;">listmonk</a>
                   &nbsp;·&nbsp;
-                  <a href="https://trackit.systems/en/contact/" style="color: #888;" target="_blank" rel="noreferrer">Imprint</a>
+                  <a href="https://trackit.systems/en/contact/" style="color: #222222;" target="_blank" rel="noreferrer">Imprint</a>
                   &nbsp;·&nbsp;
-                  <a href="https://trackit.systems/datenschutzerklaerung/" style="color: #888;" target="_blank" rel="noreferrer">Privacy Policy</a>
+                  <a href="https://trackit.systems/datenschutzerklaerung/" style="color: #222222;" target="_blank" rel="noreferrer">Privacy Policy</a>
                 </p>
               </div>
             </td>

@@ -1,0 +1,35 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-palette-slate-green: #5a7a6b; /** Schiefergrün */
+  --color-palette-dark-green: #1e5d39; /** Dunkelgrün */
+  --color-palette-mint: #cbd6cd; /** Hellgrün / Mint */
+  --color-palette-signal-orange: #ff6b35; /** Signal Orange */
+  --color-palette-dark-gray: #222222; /** Dunkelgrau / Schwarz */
+  --color-palette-soft-white: #f5f5f5; /** Soft White */
+  --color-palette-white: #ffffff; /** Weiß */
+  --radius-card: 24px; /** Content boxes and cards (styleguide range 16–24px) */
+  --radius-control: 16px; /** Smaller containers, buttons, inputs, tiles */
+  --radius-pill: 9999px; /** Badges and tags (e.g. product badge) */
+  --font-display: 'trackIT Systems', system-ui, sans-serif; /** Our display font; selected cases only, never running text. Files: assets/fonts/trackit-systems/ (ADR-0009) */
+  --font-text: system-ui, -apple-system, 'Segoe UI', sans-serif; /** Placeholder until the text typeface is chosen */
+  --font-weight-display-bold: 700; /** trackIT Systems Bold, as in 'trackIT' of the wordmark */
+  --font-weight-display-regular: 400; /** trackIT Systems Regular, as in 'systems' of the wordmark */
+  --color-page-background: var(--color-palette-soft-white); /** Main background, print and digital */
+  --color-surface: var(--color-palette-white); /** Panels on the page background: tables, forms, specimen boxes */
+  --color-text: var(--color-palette-dark-gray); /** Body text and secondary text (captions, sources) on light backgrounds */
+  --color-heading: var(--color-palette-dark-green); /** Headings and running text on light backgrounds */
+  --color-link: var(--color-palette-dark-green); /** Links on light backgrounds; always underlined, so they differ from headings */
+  --color-surface-subtle: var(--color-palette-mint); /** Subtle bases on light backgrounds: table headers, highlighted rows (dark-gray 10.64:1, dark-green 5.24:1) */
+  --color-surface-card: var(--color-palette-slate-green); /** Large content boxes and cards; text inside is white */
+  --color-on-surface-card: var(--color-palette-white); /** Text and icons on slate-green (4.74:1) */
+  --color-accent: var(--color-palette-dark-green); /** Product badges, secondary actions */
+  --color-on-accent: var(--color-palette-white); /** Text and icons on dark-green (7.84:1) */
+  --color-border: var(--color-palette-mint); /** Decorative borders; too faint for control boundaries (1.37:1 on soft-white) */
+  --color-border-control: var(--color-palette-slate-green); /** Boundaries of inputs and other controls (4.35:1 on soft-white; WCAG 1.4.11 needs 3:1) */
+  --color-focus-ring: var(--color-palette-dark-green); /** Keyboard focus on light backgrounds; on slate-green and dark-green use white */
+  --color-cta: var(--color-palette-signal-orange); /** Primary call to action only; never for large areas */
+  --color-on-cta: var(--color-palette-dark-gray); /** Text and icons on signal-orange (5.61:1); white fails contrast */
+}

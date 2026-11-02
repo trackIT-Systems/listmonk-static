@@ -24,6 +24,12 @@ cd renderer && go run .
 cd renderer && go run . -lang=de
 ```
 
-Open <http://localhost:8088/> for links to each preview. Static assets are served from `public/static/` at `/public/static/`.
+Open <http://localhost:8088/> for links to each preview. Use `-addr :8099` to listen on another port. Static assets are served from `public/static/` at `/public/static/`.
+
+## Campaign templates
+
+The `*.tpl` files in [`email-templates/`](../email-templates/) are shown under `/campaign/`. Where a template includes the campaign body (`{{ template "content" . }}`), the renderer fills in mock content with headings, a link, a button, a list, a table and code, so every styled element is visible.
+
+`default-visual.json` is the visual editor source of `default-visual.tpl`. The renderer turns its blocks into HTML the way the editor does (approximately; only the block types the file uses), and `/compare/default-visual` shows both side by side. If they differ, the editor will overwrite the `.tpl` the next time someone saves the template there.
 
 Listmonk-style URLs used in the templates (e.g. `{{ .RootURL }}/subscription/form`, `/admin/login`) are redirected to the matching preview page under `/public/...` so in-browser navigation works without editing the HTML.

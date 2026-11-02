@@ -1,0 +1,17 @@
+name: Brand
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Fails on hex colors outside the brand palette (ADR-0001).
+      - run: scripts/check-colors.sh

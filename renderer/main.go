@@ -177,6 +177,7 @@ func main() {
 	root := mustRoot()
 
 	langFlag := flag.String("lang", "en", "i18n locale: basename of a JSON file under i18n/ (e.g. de, fr, zh-CN, cs-cz)")
+	addrFlag := flag.String("addr", ":8088", "listen address")
 	flag.Parse()
 	code := strings.TrimSpace(*langFlag)
 	if code == "" {
@@ -222,6 +223,11 @@ func main() {
 		for _, p := range emailPreviews {
 			fmt.Fprintf(&b, `<li><a href="/email/%s">%s</a> <small>(%s → %s)</small></li>`, p.Slug, p.Slug, p.File, p.Name)
 		}
+		b.WriteString("</ul><h2>Campaign templates</h2><ul>")
+		for _, c := range campaignPreviews {
+			fmt.Fprintf(&b, `<li><a href="/campaign/%s">%s</a> <small>(%s, %s)</small></li>`, c.Slug, c.Slug, c.File, c.Note)
+		}
+		b.WriteString(`<li><a href="/compare/default-visual">default-visual: .tpl and .json side by side</a></li>`)
 		b.WriteString("</ul></body></html>")
 		_, _ = w.Write([]byte(b.String()))
 	})
@@ -282,7 +288,33 @@ func main() {
 		}
 	})
 
-	addr := ":8088"
-	log.Printf("listmonk template preview at http://localhost%s/", addr)
-	log.Fatal(http.ListenAndServe(addr, mux))
+	mux.HandleFunc("/campaign/", func(w http.ResponseWriter, r *http.Request) {
+		c, ok := findCampaign(strings.Trim(strings.TrimPrefix(r.URL.Path, "/campaign/"), "/"))
+		if !ok {
+			http.NotFound(w, r)
+			return
+		}
+		tmpl, err := parseCampaignTemplate(root, c, lang)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		if err := tmpl.Execute(w, mockCampaign()); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		}
+	})
+
+	// The visual template exists twice: the editor JSON and the HTML listmonk sends. Both should look the same.
+	mux.HandleFunc("/compare/default-visual", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		_, _ = w.Write([]byte(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>default-visual: .tpl and .json</title>` +
+			`<style>body{font-family:system-ui,sans-serif;margin:0}div{display:flex;gap:1rem;padding:1rem}section{flex:1}iframe{width:100%;height:90vh;border:1px solid #ccc}h2{font-size:1rem;margin:0 0 .5rem}</style></head><body><div>` +
+			`<section><h2>default-visual.tpl (sent by listmonk)</h2><iframe src="/campaign/default-visual"></iframe></section>` +
+			`<section><h2>default-visual.json (visual editor, approximate)</h2><iframe src="/campaign/default-visual-json"></iframe></section>` +
+			`</div></body></html>`))
+	})
+
+	log.Printf("listmonk template preview at http://localhost%s/", *addrFlag)
+	log.Fatal(http.ListenAndServe(*addrFlag, mux))
 }
