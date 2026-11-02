@@ -14,7 +14,7 @@ Look, voice and terms are defined in [trackIT-Systems/brand](https://github.com/
 ## Templates
 
 - Files mirror listmonk's bundled `static/` layout. Keep file names and `{{ define }}` names, or listmonk stops picking them up.
-- `email-templates/default-visual.json` is the source for the visual editor; `default-visual.tpl` is its rendered HTML. Change both together and check `/compare/default-visual` in the renderer; use only styles the editor can produce (e.g. buttons are `pill`), or the next save in the editor overwrites them.
+- `email-templates/default-visual.json` is the source for the visual editor; `default-visual.tpl` is its rendered HTML. Change both together and check `/compare/default-visual` in the renderer; use only styles the editor can produce (buttons are `pill`, [ADR-0002](docs/adr/0002-pill-buttons.md)), or the next save in the editor overwrites them.
 - Preview changes with `go run ./renderer` (see [renderer/README.md](renderer/README.md)).
 
 ## Decisions

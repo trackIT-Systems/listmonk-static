@@ -86,14 +86,14 @@ input[disabled] {
   font-weight: 600;
 }
 
-/* Buttons: brand/DESIGN.md › Buttons. .button is the primary action (one per
+/* Buttons: brand/DESIGN.md › Buttons, but pill-shaped (ADR-0002). .button is the primary action (one per
    view), .button-outline the secondary one. */
 .button {
   display: inline-block;
   min-height: 44px;
   padding: 9px 20px;
   border: 2px solid var(--color-cta);
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-pill);
   background: var(--color-cta);
   color: var(--color-on-cta);
   font-family: inherit;

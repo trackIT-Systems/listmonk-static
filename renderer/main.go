@@ -315,6 +315,6 @@ func main() {
 			`</div></body></html>`))
 	})
 
-	log.Printf("listmonk template preview at http://localhost%s/", *addrFlag)
+	log.Printf("listmonk template preview listening on %s", *addrFlag)
 	log.Fatal(http.ListenAndServe(*addrFlag, mux))
 }

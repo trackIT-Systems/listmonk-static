@@ -39,12 +39,12 @@
                 border-radius: 24px;
             }
 
-            /* Primary action: signal-orange, dark-gray label (brand DESIGN.md, Buttons) */
+            /* Primary action: signal-orange, dark-gray label (brand DESIGN.md, Buttons; pill shape: ADR-0002) */
             .button {
                 background: #ff6b35;
                 color: #222222 !important;
                 display: inline-block;
-                border-radius: 16px;
+                border-radius: 9999px;
                 padding: 11px 22px;
                 font-size: 15px;
                 font-weight: 600;

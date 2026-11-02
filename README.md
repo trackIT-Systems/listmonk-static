@@ -35,6 +35,7 @@ scripts/check-colors.sh
 | ADR | Decision | Status |
 |---|---|---|
 | [0001](docs/adr/0001-brand-release-copied-into-repo.md) | Brand release copied into the repo | Accepted |
+| [0002](docs/adr/0002-pill-buttons.md) | Pill-shaped buttons | Accepted |
 
 ## Using with listmonk
 
